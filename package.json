@@ -6,6 +6,6 @@
     "test": "node automated-tests/test.js"
   },
   "devDependencies": {
-    "puppeteer": "^21.0.0"
+    "puppeteer": "^24.35.0"
   }
 }
