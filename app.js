@@ -6,7 +6,7 @@ createApp({
     return {
       name: 'Nicklas',
       tagline: 'Senior fullstackutvecklare & Scrum Master',
-   kutvecklare & Scrum Master',
+   k
       aboutSections: [
         {
           title: 'Profil',
