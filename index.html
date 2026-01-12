@@ -3,88 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio – Din Namn</title>
+<title>Portfolio – Nicklas</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-<style>
- body {
-   margin: 0;
-   font-family: 'Segoe UI', sans-serif;
-   line-height: 1.6;
-   color: #333;
- }
- header, section {
-   padding: 60px 20px;
-   text-align: center;
- }
- header {
-   background: linear-gradient(135deg, #8EC5FC 0%, #E0C3FC 100%);
-   color: #fff;
- }
- header h1 {
-   font-size: 3em;
-   margin-bottom: 0.2em;
- }
- header p {
-   font-size: 1.2em;
-   margin-bottom: 1em;
- }
- .btn {
-   display: inline-block;
-   padding: 12px 25px;
-   font-size: 1em;
-   color: #fff;
-   background-color: #007bff;
-   border: none;
-   border-radius: 4px;
-   text-decoration: none;
-   cursor: pointer;
-   transition: background-color .3s;
- }
- .btn:hover {
-   background-color: #0056b3;
- }
- section:nth-of-type(odd) {
-   background-color: #f7f7f7;
- }
- h2 {
-   margin-bottom: 20px;
-   font-size: 2em;
- }
- .projects {
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
-   gap: 20px;
- }
- .project {
-   flex: 1 1 300px;
-   background: #fff;
-   border-radius: 8px;
-   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-   padding: 20px;
-   text-align: left;
- }
- .contact-form {
-   max-width: 500px;
-   margin: 0 auto;
- }
- .contact-form label, .contact-form input, .contact-form textarea {
-   display: block;
-   width: 100%;
-   margin-bottom: 10px;
- }
- .contact-form input, .contact-form textarea {
-   padding: 10px;
-   border: 1px solid #ccc;
-   border-radius: 4px;
- }
- .footer {
-   background: #222;
-   color: #eee;
-   padding: 20px;
-   text-align: center;
- }
-</style>
+<!-- Extern CSS för projektet -->
+<link rel="stylesheet" href="style.css">
+<!-- Vue laddas in via CDN -->
 <script src="https://unpkg.com/vue@3"></script>
 </head>
 <body>
@@ -92,7 +15,7 @@
   <header>
     <h1>{{ name }}</h1>
     <p>{{ tagline }}</p>
-    <a class="btn" href="#projects">Se mina projekt</a>
+    <a class="btn" href="#contact">Kontakta mig</a>
   </header>
 
   <section id="about">
@@ -100,18 +23,7 @@
     <p>{{ about }}</p>
   </section>
 
-  <section id="projects">
-    <h2>Mina projekt</h2>
-    <!-- Visa lista om projekt finns, annars en platshållare -->
-    <div v-if="projects.length > 0" class="projects">
-      <div class="project" v-for="project in projects" :key="project.title">
-        <h3>{{ project.title }}</h3>
-        <p>{{ project.description }}</p>
-        <a class="btn" :href="project.link">Visa mer</a>
-      </div>
-    </div>
-    <p v-else>Inga projekt att visa ännu.</p>
-  </section>
+  <!-- Projektsektionen tas bort temporärt eftersom inga projekt finns att visa -->
 
   <section id="contact">
     <h2>Kontakt</h2>
@@ -131,31 +43,7 @@
   </footer>
 </div>
 
-<script>
-const { createApp } = Vue;
-createApp({
-  data() {
-    return {
-      name: 'Din Namn',
-      tagline: 'Systemutvecklare & Problemlösare',
-      about: 'Här kan du skriva en kort beskrivning av dig själv. Berätta om din passion för systemutveckling, din erfarenhet och vad som gör dig unik.',
-      projects: [],
-      contact: {
-        name: '',
-        email: '',
-        message: ''
-      }
-    };
-  },
-  methods: {
-    submitForm() {
-      alert('Tack för ditt meddelande, ' + this.contact.name + '! Jag återkommer snart.');
-      this.contact.name = '';
-      this.contact.email = '';
-      this.contact.message = '';
-    }
-  }
-}).mount('#app');
-</script>
+<!-- Applikationslogik för Vue laddas in separat -->
+<script src="app.js"></script>
 </body>
 </html>
