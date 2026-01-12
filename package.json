@@ -1,0 +1,11 @@
+{
+  "name": "portfolio-vue",
+  "version": "1.0.0",
+  "description": "Personlig portföljwebbplats med automatiska tester",
+  "scripts": {
+    "test": "node automated-tests/test.js"
+  },
+  "devDependencies": {
+    "puppeteer": "^21.0.0"
+  }
+}
