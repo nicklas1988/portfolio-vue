@@ -10,10 +10,11 @@ header, section {
   padding: 60px 20px;
   text-align: center;
 }
+
 /* Hero header med bakgrundsbild */
 header {
-  /* Sätt bakgrundsbilden (lägg till hero-bg.png i en assets-mapp) */
-  background: url('assets/hero-bg.png') no-repeat center center/cover;
+  /* Sätt bakgrundsbilden (lägg till hero-bg.png i projektroten) */
+  background: url('hero-bg.png') no-repeat center center/cover;
   color: #fff;
   position: relative;
   overflow: hidden;
@@ -37,8 +38,6 @@ header p,
 header a {
   position: relative;
   z-index: 1;
-}
-
 }
 
 header h1 {
