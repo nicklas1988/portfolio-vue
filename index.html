@@ -19,18 +19,19 @@
     <!-- Navigation bar -->
     <div class="nav-container">
       <div class="logo">{{ logo }}</div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#about"><span class="number">01.</span> {{ translations[language].nav.about }}</a></li>
-          <li><a href="#skills"><span class="number">02.</span> {{ translations[language].nav.skills }}</a></li>
-          <li><a href="#projects"><span class="number">03.</span> {{ translations[language].nav.projects }}</a></li>
-          <li><a href="#contact"><span class="number">04.</span> {{ translations[language].nav.contact }}</a></li>
-        </ul>
-      </nav>
-      <!-- CV button placed outside nav to prevent wrapping -->
-      <a class="resume" href="#" title="CV">{{ translations[language].nav.cv }}</a>
-      <!-- Språkväxlarknapp -->
-      <button class="lang-toggle" @click="toggleLanguage">{{ language === 'sv' ? 'EN' : 'SV' }}</button>
+      <!-- Container for navigation links and action buttons. Placed to the right of the logo -->
+      <div class="nav-items">
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#about"><span class="number">01.</span> {{ translations[language].nav.about }}</a></li>
+            <li><a href="#skills"><span class="number">02.</span> {{ translations[language].nav.skills }}</a></li>
+            <li><a href="#projects"><span class="number">03.</span> {{ translations[language].nav.projects }}</a></li>
+            <li><a href="#contact"><span class="number">04.</span> {{ translations[language].nav.contact }}</a></li>
+          </ul>
+        </nav>
+        <a class="resume" href="#" title="CV">{{ translations[language].nav.cv }}</a>
+        <button class="lang-toggle" @click="toggleLanguage">{{ language === 'sv' ? 'EN' : 'SV' }}</button>
+      </div>
     </div>
     <!-- Hero content -->
     <div class="hero">
