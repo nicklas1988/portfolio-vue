@@ -34,18 +34,20 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 40px;
+  /* Reduce padding to allow nav items to fit on one row */
+  padding: 15px 30px;
   background: rgba(10, 25, 47, 0.8);
   backdrop-filter: blur(10px);
   z-index: 100;
-  gap: 20px;
+  gap: 10px;
   flex-wrap: nowrap;
 }
 
 /* Nav resume/CV button */
 .nav-container .resume {
   padding: 8px 16px;
-  font-size: 0.8em;
+  /* Slightly reduce font size on the CV button to save space */
+  font-size: 0.75em;
   color: var(--primary-color);
   border: 1px solid var(--primary-color);
   border-radius: 4px;
@@ -61,7 +63,8 @@ header {
 /* Language toggle button */
 .nav-container .lang-toggle {
   padding: 8px 12px;
-  font-size: 0.8em;
+  /* Slightly reduce font size on the language toggle to save space */
+  font-size: 0.75em;
   color: var(--primary-color);
   border: 1px solid var(--primary-color);
   background: transparent;
@@ -76,7 +79,8 @@ header {
 }
 
 .logo {
-  font-size: 1.5em;
+  /* Make the logo a bit smaller so it doesn't push other nav items */
+  font-size: 1.2em;
   color: var(--primary-color);
   font-family: 'Fira Code', monospace;
 }
@@ -84,7 +88,8 @@ header {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 15px;
+  /* Reduce spacing between nav links */
+  gap: 10px;
   margin: 0;
   padding: 0;
 }
@@ -92,7 +97,8 @@ header {
 .nav-links a {
   color: var(--text-color);
   text-decoration: none;
-  font-size: 0.85em;
+  /* Reduce nav link font size slightly for better fit */
+  font-size: 0.8em;
   transition: color 0.2s;
 }
 
