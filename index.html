@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio – Nicklas</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pzwlF2VQq+WWczrs9v0PfgNg5N4HpCJHbqJ1HtrSkS6+XQrDs+BynPE36DaNBm2jjdHD3w4ehu8C6ePb10+2BQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <!-- Extern CSS för projektet -->
 <link rel="stylesheet" href="style.css">
 <!-- Vue laddas in via CDN -->
@@ -12,14 +14,33 @@
 </head>
 <body>
 <div id="app">
+  <!-- Header section with navigation and hero content -->
   <header>
-    <h1>{{ name }}</h1>
-    <p>{{ tagline }}</p>
-    <a class="btn" href="#contact">Kontakta mig</a>
+    <!-- Navigation bar -->
+    <div class="nav-container">
+      <div class="logo">{{ name }}</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about"><span class="number">01.</span> Om mig</a></li>
+          <li><a href="#skills"><span class="number">02.</span> Kompetenser</a></li>
+          <li><a href="#projects"><span class="number">03.</span> Projekt</a></li>
+          <li><a href="#contact"><span class="number">04.</span> Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- Hero content -->
+    <div class="hero">
+      <p class="pre-title">Hej, mitt namn är</p>
+      <h1>{{ name }}</h1>
+      <h2 class="hero-tagline">{{ tagline }}</h2>
+      <p class="hero-description">{{ heroDescription }}</p>
+      <a class="btn highlight" href="#contact">Kontakta mig</a>
+    </div>
   </header>
 
+  <!-- About section -->
   <section id="about">
-    <h2>Om mig</h2>
+    <h2><span class="number">01.</span> Om mig</h2>
     <div class="about-sections">
       <!-- Skapa ett kort för varje avsnitt i om‑mig med hjälp av Vue -->
       <div class="card" v-for="section in aboutSections" :key="section.title || section.paragraphs[0]">
@@ -34,22 +55,54 @@
     </div>
   </section>
 
+  <!-- Skills section -->
+  <section id="skills">
+    <h2><span class="number">02.</span> Kompetenser</h2>
+    <div class="skills">
+      <div class="skill" v-for="skill in skills" :key="skill.name">
+        <span class="skill-name">{{ skill.name }}</span>
+        <div class="skill-bar">
+          <div class="skill-level" :style="{ width: skill.level + '%' }"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects section (placeholder) -->
+  <section id="projects">
+    <h2><span class="number">03.</span> Projekt</h2>
+    <p>Inga projekt att visa ännu.</p>
+  </section>
+
+  <!-- Contact section -->
   <section id="contact">
-    <h2>Kontakt</h2>
+    <h2><span class="number">04.</span> Kontakt</h2>
     <form class="contact-form" @submit.prevent="submitForm">
       <label for="nameInput">Namn</label>
       <input id="nameInput" v-model="contact.name" required>
-      <label for="emailInput">E-post</label>
+      <label for="emailInput">E‑post</label>
       <input id="emailInput" type="email" v-model="contact.email" required>
       <label for="messageInput">Meddelande</label>
       <textarea id="messageInput" v-model="contact.message" required></textarea>
-      <button class="btn" type="submit">Skicka</button>
+      <button class="btn highlight" type="submit">Skicka</button>
     </form>
   </section>
 
   <footer class="footer">
     &copy; 2026 {{ name }}. Alla rättigheter förbehållna.
   </footer>
+
+  <!-- Social icons bar on the left -->
+  <div class="social-bar">
+    <ul>
+      <li><a href="https://github.com/nicklas1988" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
+      <li><a href="https://www.linkedin.com/in/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+    </ul>
+  </div>
+  <!-- Email bar on the right -->
+  <div class="email-bar">
+    <a href="mailto:nicklas@example.com">nicklas@example.com</a>
+  </div>
 </div>
 
 <!-- Applikationslogik för Vue laddas in separat -->

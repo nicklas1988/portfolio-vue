@@ -26,7 +26,7 @@ const path = require('path');
   }
 
   // Kontrollera tagline
-  const tagline = await page.$eval('header p', el => el.textContent.trim());
+  const tagline = await page.$eval('header .hero-tagline', el => el.textContent.trim());
   if (!tagline.includes('Senior')) {
     throw new Error(`Tagline verkar inte korrekt: ${tagline}`);
   }

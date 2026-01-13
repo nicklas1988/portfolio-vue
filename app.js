@@ -1,4 +1,4 @@
-// Konfigurera Vue afplikationen i en separat fil
+// Konfigurera Vue‑applikationen i en separat fil
 const { createApp } = Vue;
 
 createApp({
@@ -6,6 +6,8 @@ createApp({
     return {
       name: 'Nicklas',
       tagline: 'Senior fullstackutvecklare & Scrum Master',
+      // Kort beskrivning som visas i hero‑sektionen
+      heroDescription: 'Jag är en passionerad utvecklare som gillar nya problem, utmaningar och resultat och trivs i tvärfunktionella team.',
       // Segmenterad information till om‑mig‑sektionen. Varje objekt innehåller en titel och antingen stycken eller en lista.
       aboutSections: [
         {
@@ -38,6 +40,17 @@ createApp({
             'Teracom FM‑radio (2011–2015): Systemingenjör och utvecklare för FM‑radio‑kedjan i Sverige.'
           ]
         }
+      ],
+      // Lista över färdigheter och deras nivåer i procent för kompetenssektionen
+      skills: [
+        { name: 'Java', level: 90 },
+        { name: 'JavaScript', level: 95 },
+        { name: 'TypeScript', level: 90 },
+        { name: 'Vue', level: 85 },
+        { name: 'React', level: 85 },
+        { name: 'Docker/Podman', level: 80 },
+        { name: 'AWS & Azure', level: 75 },
+        { name: 'CI/CD & DevOps', level: 85 }
       ],
       projects: [],
       contact: {
