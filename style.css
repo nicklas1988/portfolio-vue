@@ -53,6 +53,9 @@ header {
   border-radius: 4px;
   text-decoration: none;
   transition: background 0.3s, color 0.3s;
+
+  /* Push the CV button to the far right of the navigation bar */
+  margin-left: auto;
 }
 
 .nav-container .resume:hover {
@@ -71,6 +74,9 @@ header {
   border-radius: 4px;
   cursor: pointer;
   transition: background 0.3s, color 0.3s;
+
+  /* Add a small margin to separate the language toggle from the CV button */
+  margin-left: 10px;
 }
 
 .nav-container .lang-toggle:hover {
