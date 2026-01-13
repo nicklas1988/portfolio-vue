@@ -44,26 +44,23 @@ header {
   flex-wrap: nowrap;
 }
 
-/* Container for navigation actions (CV and language toggle) and navigation links */
-.nav-items {
+/* Container for centered navigation links */
+.nav-links-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* Container for action buttons (CV and language toggle) */
+.nav-actions {
   display: flex;
   align-items: center;
-  margin-left: auto;
-  /* Reduce gap so that all items fit on one line even on narrower screens */
   gap: 15px;
   white-space: nowrap;
 }
 
-/* Add space before the group of navigation links */
-.nav-items nav {
-  margin-left: 15px;
-}
-
-/* Ensure nav links line up horizontally within nav-items */
-.nav-items .nav-links {
-  display: flex;
-  gap: 20px;
-}
+/* The nav-links ul is displayed as a flex row; gap is defined below */
+/* Removed specific selector tied to nav-items as nav structure has changed */
 
 /* Nav resume/CV button */
 .nav-container .resume {
@@ -122,7 +119,8 @@ header {
   color: var(--text-color);
   text-decoration: none;
   /* Reduce nav link font size slightly for better fit */
-  font-size: 0.8em;
+  /* Slightly smaller font size for better fit */
+  font-size: 0.75em;
   transition: color 0.2s;
 }
 
