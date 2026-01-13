@@ -13,7 +13,7 @@
 
 body {
   margin: 0;
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
   line-height: 1.6;
   background: var(--bg-color);
   color: var(--text-color);
@@ -46,7 +46,7 @@ header {
 
 /* Container for centered navigation links */
 .nav-links-container {
-  flex: 1;
+  flex: 0.95;
   display: flex;
   justify-content: center;
 }
@@ -72,7 +72,6 @@ header {
   border-radius: 4px;
   text-decoration: none;
   transition: background 0.3s, color 0.3s;
-
 }
 
 .nav-container .resume:hover {
@@ -91,7 +90,6 @@ header {
   border-radius: 4px;
   cursor: pointer;
   transition: background 0.3s, color 0.3s;
-
 }
 
 .nav-container .lang-toggle:hover {
@@ -103,7 +101,7 @@ header {
   /* Make the logo a bit smaller so it doesn't push other nav items */
   font-size: 1.2em;
   color: var(--primary-color);
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
 }
 
 .nav-links {
@@ -131,7 +129,7 @@ header {
 .nav-links .number {
   color: var(--primary-color);
   margin-right: 4px;
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
 }
 
 /* Hero section */
@@ -222,13 +220,13 @@ section h2 {
   font-size: 2.2em;
   margin-bottom: 40px;
   color: var(--text-color);
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
 }
 
 section h2 .number {
   color: var(--primary-color);
   margin-right: 8px;
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
 }
 
 /* About cards */
@@ -359,7 +357,7 @@ section h2 .number {
   border: 1px solid #233554;
   border-radius: 4px;
   color: var(--text-color);
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
 }
 
 .contact-form button {
@@ -410,8 +408,8 @@ section h2 .number {
 
 .email-bar {
   position: fixed;
-  bottom: 0;
-  right: 40px;
+  bottom: 20px;
+  right: 10px;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
 }
