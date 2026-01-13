@@ -4,7 +4,10 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
+      // Fullständigt namn som visas i hero‑sektionen
       name: 'Nicklas',
+      // Initialer som används som logotyp uppe till vänster
+      logo: 'NE',
       tagline: 'Senior fullstackutvecklare & Scrum Master',
       // Kort beskrivning som visas i hero‑sektionen
       heroDescription: 'Jag är en passionerad utvecklare som gillar nya problem, utmaningar och resultat och trivs i tvärfunktionella team.',
@@ -57,7 +60,13 @@ createApp({
         name: '',
         email: '',
         message: ''
-      }
+      },
+      // Sociala länkar som visas horisontellt i hero‑sektionen
+      socialLinks: [
+        { icon: 'fab fa-github', url: 'https://github.com/nicklas1988', label: 'GitHub' },
+        { icon: 'fab fa-linkedin', url: 'https://www.linkedin.com/in/', label: 'LinkedIn' },
+        { icon: 'fas fa-envelope', url: 'mailto:nicklas@example.com', label: 'E‑post' }
+      ]
     };
   },
   methods: {
