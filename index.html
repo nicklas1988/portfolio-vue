@@ -20,10 +20,19 @@
 
   <section id="about">
     <h2>Om mig</h2>
-    <p>{{ about }}</p>
+    <div class="about-sections">
+      <!-- Skapa ett kort för varje avsnitt i om‑mig med hjälp av Vue -->
+      <div class="card" v-for="section in aboutSections" :key="section.title || section.paragraphs[0]">
+        <h3 v-if="section.title">{{ section.title }}</h3>
+        <div v-for="paragraph in section.paragraphs">
+          <p>{{ paragraph }}</p>
+        </div>
+        <ul v-if="section.list">
+          <li v-for="item in section.list">{{ item }}</li>
+        </ul>
+      </div>
+    </div>
   </section>
-
-  <!-- Projektsektionen tas bort temporärt eftersom inga projekt finns att visa -->
 
   <section id="contact">
     <h2>Kontakt</h2>
