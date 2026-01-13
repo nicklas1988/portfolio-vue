@@ -8,8 +8,10 @@ createApp({
       name: 'Nicklas',
       // Initialer som används som logotyp uppe till vänster
       logo: 'NE',
+      // Aktivt språk: 'sv' (svenska) eller 'en' (engelska)
+      language: 'sv',
       tagline: 'Senior fullstackutvecklare & Scrum Master',
-      // Kort beskrivning som visas i hero‑sektionen
+      // Kort beskrivning som visas i hero‑sektionen (svenskt standardvärde)
       heroDescription: 'Jag är en passionerad utvecklare som gillar nya problem, utmaningar och resultat och trivs i tvärfunktionella team.',
       // Segmenterad information till om‑mig‑sektionen. Varje objekt innehåller en titel och antingen stycken eller en lista.
       aboutSections: [
@@ -67,6 +69,60 @@ createApp({
         { icon: 'fab fa-linkedin', url: 'https://www.linkedin.com/in/', label: 'LinkedIn' },
         { icon: 'fas fa-envelope', url: 'mailto:nicklas@example.com', label: 'E‑post' }
       ]
+      ,
+      // Översättningar för olika språk
+      translations: {
+        sv: {
+          nav: {
+            about: 'Om mig',
+            skills: 'Kompetenser & Tekniker',
+            projects: 'Projekt',
+            contact: 'Kontakt',
+            cv: 'CV'
+          },
+          projects: {
+            noProjects: 'Inga projekt att visa ännu.'
+          },
+          hero: {
+            preTitle: 'Hej, mitt namn är',
+            tagline: 'Senior fullstackutvecklare & Scrum Master',
+            contactButton: 'Kontakta mig',
+            nextSectionHeading: 'Vad är nästa steg?',
+            contactIntro: 'Även om jag inte aktivt söker nya möjligheter, är min inkorg alltid öppen. Har du en fråga eller vill du bara säga hej? Hör gärna av dig!',
+            contactSubmit: 'Skicka'
+            ,
+            description: 'Jag är en passionerad utvecklare som gillar nya problem, utmaningar och resultat och trivs i tvärfunktionella team.'
+          },
+          footer: {
+            rights: 'Alla rättigheter förbehållna.'
+          }
+        },
+        en: {
+          nav: {
+            about: 'About',
+            skills: 'Skills & Technologies',
+            projects: 'Projects',
+            contact: 'Contact',
+            cv: 'Resume'
+          },
+          projects: {
+            noProjects: 'No projects to display yet.'
+          },
+          hero: {
+            preTitle: 'Hi, my name is',
+            tagline: 'Senior full‑stack developer & Scrum Master',
+            contactButton: 'Contact me',
+            nextSectionHeading: "What's Next?",
+            contactIntro: "I'm currently not looking for new opportunities, but my inbox is always open. If you have a question or just want to say hi, feel free to reach out!",
+            contactSubmit: 'Send'
+            ,
+            description: 'I am a passionate developer who enjoys new challenges and results and thrives in cross‑functional teams.'
+          },
+          footer: {
+            rights: 'All rights reserved.'
+          }
+        }
+      }
     };
   },
   methods: {
@@ -75,6 +131,15 @@ createApp({
       this.contact.name = '';
       this.contact.email = '';
       this.contact.message = '';
+    }
+    ,
+    // Växla språk mellan svenska och engelska
+    toggleLanguage() {
+      this.language = this.language === 'sv' ? 'en' : 'sv';
+      // Uppdatera tagline och beskrivning utifrån det valda språket
+      const t = this.translations[this.language].hero;
+      this.tagline = t.tagline;
+      this.heroDescription = t.description;
     }
   }
 }).mount('#app');

@@ -21,22 +21,24 @@
       <div class="logo">{{ logo }}</div>
       <nav>
         <ul class="nav-links">
-          <li><a href="#about"><span class="number">01.</span> Om mig</a></li>
-          <li><a href="#skills"><span class="number">02.</span> Kompetenser</a></li>
-          <li><a href="#projects"><span class="number">03.</span> Projekt</a></li>
-          <li><a href="#contact"><span class="number">04.</span> Kontakt</a></li>
+          <li><a href="#about"><span class="number">01.</span> {{ translations[language].nav.about }}</a></li>
+          <li><a href="#skills"><span class="number">02.</span> {{ translations[language].nav.skills }}</a></li>
+          <li><a href="#projects"><span class="number">03.</span> {{ translations[language].nav.projects }}</a></li>
+          <li><a href="#contact"><span class="number">04.</span> {{ translations[language].nav.contact }}</a></li>
         </ul>
-        <!-- CV button aligned with nav links -->
-        <a class="btn resume" href="#" title="Ladda ner CV">CV</a>
       </nav>
+      <!-- CV button placed outside nav to prevent wrapping -->
+      <a class="resume" href="#" title="CV">{{ translations[language].nav.cv }}</a>
+      <!-- Språkväxlarknapp -->
+      <button class="lang-toggle" @click="toggleLanguage">{{ language === 'sv' ? 'EN' : 'SV' }}</button>
     </div>
     <!-- Hero content -->
     <div class="hero">
-      <p class="pre-title">Hej, mitt namn är</p>
+      <p class="pre-title">{{ translations[language].hero.preTitle }}</p>
       <h1>{{ name }}</h1>
       <h2 class="hero-tagline">{{ tagline }}</h2>
       <p class="hero-description">{{ heroDescription }}</p>
-      <a class="btn highlight" href="#contact">Kontakta mig</a>
+      <a class="btn highlight" href="#contact">{{ translations[language].hero.contactButton }}</a>
       <!-- Horisontella sociala ikoner under hero-texten -->
       <ul class="hero-social" v-if="socialLinks && socialLinks.length">
         <li v-for="link in socialLinks" :key="link.label">
@@ -50,7 +52,7 @@
 
   <!-- About section -->
   <section id="about">
-    <h2><span class="number">01.</span> Om mig</h2>
+    <h2><span class="number">01.</span> {{ translations[language].nav.about }}</h2>
     <div class="about-sections">
       <!-- Skapa ett kort för varje avsnitt i om‑mig med hjälp av Vue -->
       <div class="card" v-for="section in aboutSections" :key="section.title || section.paragraphs[0]">
@@ -67,7 +69,7 @@
 
   <!-- Skills section -->
   <section id="skills">
-    <h2><span class="number">02.</span> Kompetenser & Tekniker</h2>
+    <h2><span class="number">02.</span> {{ translations[language].nav.skills }}</h2>
     <div class="skills-container">
       <!-- Left column: progress bars -->
       <div class="skills-left">
@@ -91,14 +93,15 @@
 
   <!-- Projects section (placeholder) -->
   <section id="projects">
-    <h2><span class="number">03.</span> Projekt</h2>
-    <p>Inga projekt att visa ännu.</p>
+    <h2><span class="number">03.</span> {{ translations[language].nav.projects }}</h2>
+    <p v-if="projects.length === 0">{{ translations[language].projects.noProjects }}</p>
+    <!-- If there are projects in future, list them here using Vue -->
   </section>
 
   <!-- Contact section -->
   <section id="contact">
-    <h2><span class="number">04.</span> Vad är nästa steg?</h2>
-    <p class="contact-intro">Även om jag inte aktivt söker nya möjligheter, är min inkorg alltid öppen. Har du en fråga eller vill du bara säga hej? Hör gärna av dig!</p>
+    <h2><span class="number">04.</span> {{ translations[language].hero.nextSectionHeading }}</h2>
+    <p class="contact-intro">{{ translations[language].hero.contactIntro }}</p>
     <form class="contact-form" @submit.prevent="submitForm">
       <label for="nameInput">Namn</label>
       <input id="nameInput" v-model="contact.name" required>
@@ -106,12 +109,12 @@
       <input id="emailInput" type="email" v-model="contact.email" required>
       <label for="messageInput">Meddelande</label>
       <textarea id="messageInput" v-model="contact.message" required></textarea>
-      <button class="btn highlight" type="submit">Skicka</button>
+      <button class="btn highlight" type="submit">{{ translations[language].hero.contactSubmit }}</button>
     </form>
   </section>
 
   <footer class="footer">
-    &copy; 2026 {{ name }}. Alla rättigheter förbehållna.
+    &copy; 2026 {{ name }}. {{ translations[language].footer.rights }}
   </footer>
 
   <!-- Social icons bar on the left -->

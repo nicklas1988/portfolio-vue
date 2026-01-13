@@ -38,13 +38,14 @@ header {
   background: rgba(10, 25, 47, 0.8);
   backdrop-filter: blur(10px);
   z-index: 100;
+  gap: 20px;
+  flex-wrap: nowrap;
 }
 
 /* Nav resume/CV button */
-.nav-container nav .resume {
-  margin-left: 20px;
+.nav-container .resume {
   padding: 8px 16px;
-  font-size: 0.85em;
+  font-size: 0.8em;
   color: var(--primary-color);
   border: 1px solid var(--primary-color);
   border-radius: 4px;
@@ -52,7 +53,24 @@ header {
   transition: background 0.3s, color 0.3s;
 }
 
-.nav-container nav .resume:hover {
+.nav-container .resume:hover {
+  background: rgba(100, 255, 218, 0.1);
+  color: var(--primary-color);
+}
+
+/* Language toggle button */
+.nav-container .lang-toggle {
+  padding: 8px 12px;
+  font-size: 0.8em;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  background: transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.nav-container .lang-toggle:hover {
   background: rgba(100, 255, 218, 0.1);
   color: var(--primary-color);
 }
@@ -66,7 +84,7 @@ header {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 15px;
   margin: 0;
   padding: 0;
 }
@@ -74,7 +92,7 @@ header {
 .nav-links a {
   color: var(--text-color);
   text-decoration: none;
-  font-size: 0.9em;
+  font-size: 0.85em;
   transition: color 0.2s;
 }
 
