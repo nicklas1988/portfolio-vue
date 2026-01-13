@@ -21,6 +21,10 @@
       <div class="logo">{{ logo }}</div>
       <!-- Container for navigation links and action buttons. Placed to the right of the logo -->
       <div class="nav-items">
+        <!-- Action buttons first: CV and language toggle -->
+        <a class="resume" href="#" title="CV">{{ translations[language].nav.cv }}</a>
+        <button class="lang-toggle" @click="toggleLanguage">{{ language === 'sv' ? 'EN' : 'SV' }}</button>
+        <!-- Navigation links positioned after action buttons -->
         <nav>
           <ul class="nav-links">
             <li><a href="#about"><span class="number">01.</span> {{ translations[language].nav.about }}</a></li>
@@ -29,8 +33,6 @@
             <li><a href="#contact"><span class="number">04.</span> {{ translations[language].nav.contact }}</a></li>
           </ul>
         </nav>
-        <a class="resume" href="#" title="CV">{{ translations[language].nav.cv }}</a>
-        <button class="lang-toggle" @click="toggleLanguage">{{ language === 'sv' ? 'EN' : 'SV' }}</button>
       </div>
     </div>
     <!-- Hero content -->

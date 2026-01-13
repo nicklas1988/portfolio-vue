@@ -44,18 +44,19 @@ header {
   flex-wrap: nowrap;
 }
 
-/* Container for navigation links and actions (CV and language toggle) */
+/* Container for navigation actions (CV and language toggle) and navigation links */
 .nav-items {
   display: flex;
   align-items: center;
   margin-left: auto;
-  gap: 20px;
+  /* Reduce gap so that all items fit on one line even on narrower screens */
+  gap: 15px;
   white-space: nowrap;
 }
 
-/* Space between the CV button and language toggle inside nav-items */
-.nav-items .lang-toggle {
-  margin-left: 10px;
+/* Add space before the group of navigation links */
+.nav-items nav {
+  margin-left: 15px;
 }
 
 /* Ensure nav links line up horizontally within nav-items */
