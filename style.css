@@ -28,7 +28,8 @@ header {
 
 .nav-container {
   display: flex;
-  justify-content: space-between;
+  /* Align items to the start; nav items container will push itself to the right */
+  justify-content: flex-start;
   align-items: center;
   position: fixed;
   top: 0;
@@ -43,6 +44,26 @@ header {
   flex-wrap: nowrap;
 }
 
+/* Container for navigation links and actions (CV and language toggle) */
+.nav-items {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 20px;
+  white-space: nowrap;
+}
+
+/* Space between the CV button and language toggle inside nav-items */
+.nav-items .lang-toggle {
+  margin-left: 10px;
+}
+
+/* Ensure nav links line up horizontally within nav-items */
+.nav-items .nav-links {
+  display: flex;
+  gap: 20px;
+}
+
 /* Nav resume/CV button */
 .nav-container .resume {
   padding: 8px 16px;
@@ -54,8 +75,6 @@ header {
   text-decoration: none;
   transition: background 0.3s, color 0.3s;
 
-  /* Push the CV button to the far right of the navigation bar */
-  margin-left: auto;
 }
 
 .nav-container .resume:hover {
@@ -75,8 +94,6 @@ header {
   cursor: pointer;
   transition: background 0.3s, color 0.3s;
 
-  /* Add a small margin to separate the language toggle from the CV button */
-  margin-left: 10px;
 }
 
 .nav-container .lang-toggle:hover {
