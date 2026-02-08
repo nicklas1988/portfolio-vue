@@ -1,9 +1,3 @@
-/*
-  Translations for the portfolio site.
-  Attached to the global `window` object for use by app.js.
-  Languages supported: Swedish ('sv') and English ('en').
-*/
-
 window.translations = {
   sv: {
     nav: {
@@ -12,6 +6,10 @@ window.translations = {
       projects: 'Projekt',
       contact: 'Kontakt',
       cv: 'CV'
+    },
+    skills: {
+      proficiency: 'Erfarenhetsnivå',
+      technologies: 'Tekniker jag jobbar med'
     },
     projects: {
       noProjects: 'Inga projekt att visa ännu.',
@@ -27,13 +25,13 @@ window.translations = {
     hero: {
       preTitle: 'Hej, mitt namn är',
       tagline: 'Senior fullstackutvecklare & Scrum Master',
-      contactButton: 'Kontakta mig',
-      nextSectionHeading: 'Vad är nästa steg?',
       contactIntro: 'Även om jag inte aktivt söker nya möjligheter, är min inkorg alltid öppen. Har du en fråga eller vill du bara säga hej? Hör gärna av dig!',
-      contactSubmit: 'Skicka',
       description: 'Jag är en passionerad utvecklare som gillar nya problem, utmaningar och resultat och trivs i tvärfunktionella team.'
     },
     contact: {
+      whatsNext: 'Vad är nästa steg?',
+      heading: 'Hör av dig',
+      sayHello: 'Säg hej',
       nameLabel: 'Namn',
       emailLabel: 'E-post',
       messageLabel: 'Meddelande'
@@ -86,6 +84,10 @@ window.translations = {
       contact: 'Contact',
       cv: 'Resume'
     },
+    skills: {
+      proficiency: 'Proficiency',
+      technologies: 'Technologies I work with'
+    },
     projects: {
       noProjects: 'No projects to display yet.',
       featured: 'Featured Project',
@@ -100,13 +102,13 @@ window.translations = {
     hero: {
       preTitle: 'Hi, my name is',
       tagline: 'Senior full-stack developer & Scrum Master',
-      contactButton: 'Contact me',
-      nextSectionHeading: "What's Next?",
       contactIntro: 'Even though I am not actively looking for new opportunities, my inbox is always open. Have a question or just want to say hello? Feel free to reach out!',
-      contactSubmit: 'Send',
       description: 'I am a passionate developer who loves new problems, challenges and results and thrives in cross-functional teams.'
     },
     contact: {
+      whatsNext: "What's Next?",
+      heading: 'Get In Touch',
+      sayHello: 'Say Hello',
       nameLabel: 'Name',
       emailLabel: 'Email',
       messageLabel: 'Message'
